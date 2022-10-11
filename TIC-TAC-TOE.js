@@ -35,6 +35,7 @@ function cellCompletion(event) {
       event.currentTarget.innerHTML = currentPlayer;
       if (winningCondition()) {
         winningMsg();
+        drawMsg();
       }
       changePlayer();
     }
@@ -64,6 +65,12 @@ function winningCondition() {
     }
   }
   return false;
+}
+
+function drawMsg() {
+  if (cells.innerText !== "") {
+    alert(Great);
+  }
 }
 
 function winningMsg() {

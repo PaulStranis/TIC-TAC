@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clicks counting.</title>
+  </head>
+  <h1>How many clicks you've done.</h1>
+  <body>
+    <p>
+      You click
+      <span style="font-weight: bold; font-size: 50px" id="clicksNumber"></span>
+      <span id="singularOrPlural"></span>.
+    </p>
+    <button type="button" onclick="clicksCounting()">Click me!</button>
+    <script>
+      let clicks = 0;
+      spanfill();
+
+      function spanfill() {
+        let sgpl = clicks === 1 ? "time" : "times";
+        document.getElementById("clicksNumber").innerHTML = clicks;
+        document.getElementById("singularOrPlural").innerHTML = sgpl;
+      }
+
+      function clicksCounting() {
+        clicks += +1;
+        spanfill();
+      }
+    </script>
+  </body>
+</html>
